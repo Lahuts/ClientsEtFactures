@@ -9,9 +9,13 @@ public class Client
 	 * Crée un client.
 	 * @param nom le nom du client. 
 	 */
+	String nom;
+	List<Facture> listFacture;
+
 	
 	public Client(String nom)
 	{
+		this.nom = nom;
 	}
 
 	/**
@@ -21,7 +25,7 @@ public class Client
 	
 	public String getNom()
 	{
-		return null;
+		return this.nom;
 	}
 	
 	/**
@@ -31,6 +35,7 @@ public class Client
 	
 	public void setNom(String nom)
 	{
+		this.nom = nom;
 	}
 	
 	/**
@@ -41,7 +46,7 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		return null;
+		return new Facture(montant);
 	}
 	
 	/**
@@ -51,7 +56,7 @@ public class Client
 
 	public List<Facture> getFactures()
 	{
-		return null;
+		return this.listFacture;
 	}
 	
 	/**
@@ -61,7 +66,11 @@ public class Client
 	
 	public int sommeMontants()
 	{
-		return 0;
+		int sommeglob = 0;
+		for(Facture value : this.getFactures()) {
+			sommeglob += value.getMontant();
+		}
+		return sommeglob;
 	}
 
 	/**
@@ -73,7 +82,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return null;
+		return new Facture(montant,reglee) ;
 	}	
 	
 	/**
@@ -83,7 +92,13 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
-		return null;
+		List<Facture> listPayer = new ArrayList<Facture>();
+		for(Facture payer : listFacture) {
+			if(payer.estReglee()) {
+				listPayer.add(payer);
+			}
+		}
+		return listPayer;
 	}
 	
 

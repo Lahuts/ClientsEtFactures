@@ -9,8 +9,8 @@ public class Client
 	 * Crée un client.
 	 * @param nom le nom du client. 
 	 */
-	String nom;
-	List<Facture> listFacture;
+	private String nom;
+	private List<Facture> listFacture;
 
 	
 	public Client(String nom)

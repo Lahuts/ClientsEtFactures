@@ -12,14 +12,15 @@ public class Client
 	private String nom;
 	private List<Facture> listFacture;
 	private Facture facture;
-	public void setFacture(Facture facture) {
-		this.facture = facture;
-	}
 
 	
 	public Client(String nom)
 	{
 		this.nom = nom;
+	}
+
+	public void setFacture(Facture facture) {
+		this.facture = facture;
 	}
 
 	/**

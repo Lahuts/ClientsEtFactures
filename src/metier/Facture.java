@@ -9,7 +9,8 @@ public class Facture
 	private Client client;
 	
 	
-	public Facture(int montant,Client client) {
+	public Facture(int montant,Client client) 
+	{
 		this.client = client;
 		this.montant = montant;
 	}

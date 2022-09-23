@@ -11,6 +11,10 @@ public class Client
 	 */
 	private String nom;
 	private List<Facture> listFacture;
+	private Facture facture;
+	public void setFacture(Facture facture) {
+		this.facture = facture;
+	}
 
 	
 	public Client(String nom)
@@ -46,7 +50,10 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		return new Facture(montant,this);
+		Facture facture = new Facture(montant,this);
+		setFacture(facture);
+		listFacture.add(facture);
+		return facture;
 	}
 	
 	/**

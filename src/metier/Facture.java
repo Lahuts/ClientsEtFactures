@@ -6,15 +6,20 @@ public class Facture
 {
 	private int montant;
 	private boolean reglee;
+	private Client client;
 	
 	
-	public Facture(int montant) {
+	public Facture(int montant,Client client) {
+		this.client = client;
 		this.montant = montant;
 	}
-	public Facture(int montant,boolean reglee) {
+
+	public Facture(int montant,boolean reglee,Client client) {
 		this.montant = montant;
 		this.reglee = reglee;
+		this.client = client;
 	}
+	
 	/**
 	 * Retourne le client à qui est adressée la facture..
 	 * @return le client.
@@ -70,6 +75,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(this.montant,this.reglee);
+		return new Facture(this.montant,this.reglee,this.client);
 	}
 }

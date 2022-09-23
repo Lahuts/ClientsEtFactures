@@ -46,7 +46,7 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		return new Facture(montant);
+		return new Facture(montant,this);
 	}
 	
 	/**
@@ -82,7 +82,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		return new Facture(montant,reglee) ;
+		return new Facture(montant,reglee,this) ;
 	}	
 	
 	/**

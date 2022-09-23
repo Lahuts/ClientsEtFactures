@@ -75,6 +75,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(this.montant,this.reglee,this.client);
+		return new Facture(getMontant(),estReglee(),getClient());
 	}
 }

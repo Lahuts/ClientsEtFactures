@@ -31,7 +31,7 @@ public class Facture
 	
 	public int getMontant()
 	{
-		return 0;
+		return this.montant;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class Facture
 	
 	public boolean estReglee()
 	{
-		return true;
+		return this.reglee;
 	}
 
 	/**
@@ -69,6 +69,6 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(this.getMontant(),this.estReglee());
+		return null;
 	}
 }

@@ -67,7 +67,8 @@ public class Client
 	public int sommeMontants()
 	{
 		int sommeglob = 0;
-		for(Facture value : this.getFactures()) {
+		for(Facture value : this.getFactures()) 
+		{
 			sommeglob += value.getMontant();
 		}
 		return sommeglob;
@@ -93,8 +94,10 @@ public class Client
 	public List<Facture> facturesReglees()
 	{
 		List<Facture> listPayer = new ArrayList<Facture>();
-		for(Facture payer : listFacture) {
-			if(payer.estReglee()) {
+		for(Facture payer : listFacture) 
+		{
+			if(payer.estReglee()) 
+			{
 				listPayer.add(payer);
 			}
 		}

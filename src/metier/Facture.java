@@ -26,7 +26,7 @@ public class Facture
 	 */
 	public Client getClient()
 	{
-		return null;
+		return this.client;
 	}
 
 	/**

@@ -22,7 +22,6 @@ public class Client
 
 	public void setFacture(Facture facture) {
 		this.facture = facture;
-		listFacture.add(facture);
 	}
 
 	/**

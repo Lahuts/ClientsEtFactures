@@ -64,7 +64,8 @@ public class Client
 
 	public ArrayList<Facture> getFactures()
 	{
-		return this.listFacture;
+		ArrayList<Facture> result = new ArrayList<Facture>(this.listFacture);
+		return result;
 	}
 	
 	/**

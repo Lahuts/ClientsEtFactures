@@ -50,9 +50,15 @@ public class Client
 	public Facture createFacture(int montant)
 	{
 		Facture f = new Facture(montant,this);
+		add(f);
 		return f;
 	}
 	
+
+	public void add(Facture fact)
+	{
+		this.listFacture.add(fact);
+	}
 	/**
 	 * Retourne une copie de la liste des factures du client. 
 	 * @return une copie de la liste des factures du client.
@@ -87,6 +93,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
+
 		return new Facture(montant,reglee,this) ;
 	}	
 	

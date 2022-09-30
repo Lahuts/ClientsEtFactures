@@ -17,7 +17,6 @@ public class Client
 	
 	public Client(String nom)
 	{
-		
 		this.nom = nom;
 	}
 
@@ -54,7 +53,7 @@ public class Client
 	public Facture createFacture(int montant)
 	{
 		Facture f = new Facture(montant,this);
-		listFacture.add(f);
+		getFactures().add(f);
 		return f;
 	}
 	

@@ -10,7 +10,7 @@ public class Client
 	 * @param nom le nom du client. 
 	 */
 	private String nom;
-	private List<Facture> listFacture;
+	private ArrayList<Facture> listFacture;
 	private Facture facture;
 	static public List<Client> Clients;
 
@@ -62,7 +62,7 @@ public class Client
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public List<Facture> getFactures()
+	public ArrayList<Facture> getFactures()
 	{
 		return this.listFacture;
 	}

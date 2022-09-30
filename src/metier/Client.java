@@ -1,6 +1,8 @@
 package metier;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Client
@@ -11,8 +13,6 @@ public class Client
 	 */
 	private String nom;
 	private ArrayList<Facture> listFacture;
-	private Facture facture;
-	static public List<Client> Clients;
 
 	
 	public Client(String nom)
@@ -20,9 +20,6 @@ public class Client
 		this.nom = nom;
 	}
 
-	public void setFacture(Facture facture) {
-		this.facture = facture;
-	}
 
 	/**
 	 * Retourne le nom du client.
@@ -61,9 +58,9 @@ public class Client
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public ArrayList<Facture> getFactures()
+	public List<Facture> getFactures()
 	{
-		return (ArrayList<Facture>)this.listFacture.clone();
+		return Collections.unmodifiableList(listFacture);
 	}
 	
 	/**

@@ -19,7 +19,6 @@ public class Client
 	{
 		
 		this.nom = nom;
-		this.Clients.add(this);
 	}
 
 	public void setFacture(Facture facture) {

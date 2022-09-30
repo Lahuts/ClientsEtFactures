@@ -76,6 +76,7 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return new Facture(getMontant(),estReglee(),getClient());
+		Facture  a = new Facture(getMontant(),estReglee(),getClient());
+		return a ;
 	}
 }

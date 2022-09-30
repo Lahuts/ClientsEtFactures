@@ -12,7 +12,7 @@ public class Client
 	 * @param nom le nom du client. 
 	 */
 	private String nom;
-	private ArrayList<Facture> listFacture;
+	private ArrayList<Facture> listFacture = new ArrayList<>();
 
 	
 	public Client(String nom)

@@ -53,7 +53,6 @@ public class Client
 	public Facture createFacture(int montant)
 	{
 		Facture f = new Facture(montant,this);
-		setFacture(new Facture(montant,this));
 		return f;
 	}
 	
@@ -64,8 +63,7 @@ public class Client
 
 	public ArrayList<Facture> getFactures()
 	{
-		ArrayList<Facture> result =  (ArrayList<Facture>)listFacture.clone();
-		return result;
+		return (ArrayList<Facture>)this.listFacture.clone();
 	}
 	
 	/**

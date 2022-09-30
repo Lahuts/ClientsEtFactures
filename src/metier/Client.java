@@ -64,8 +64,7 @@ public class Client
 
 	public ArrayList<Facture> getFactures()
 	{
-		ArrayList<Facture> result = new ArrayList<Facture>(this.listFacture);
-		return result;
+		return (ArrayList<Facture>)listFacture.clone();
 	}
 	
 	/**

@@ -109,6 +109,7 @@ public class Client
 		{
 			if(payer.estReglee()) 
 			{
+				System.out.println(payer.estReglee());
 				listPayer.add(payer);
 			}
 		}

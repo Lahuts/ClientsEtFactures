@@ -115,7 +115,7 @@ public class Client
 				listPayer.add(payer);
 			}
 		}
-		return listPayer;
+		 return Collections.unmodifiableList(listPayer);
 	}
 	
 

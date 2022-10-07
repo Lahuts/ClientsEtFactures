@@ -13,6 +13,7 @@ public class Client
 	private String nom;
 	private ArrayList<Facture> listFacture = new ArrayList<>();
 	static ArrayList<Client> clientList = new ArrayList<>();
+	private ArrayList<Facture> listPayer = new ArrayList<Facture>();
 
 	
 	public Client(String nom)
@@ -103,6 +104,7 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
+		
 		return new Facture(montant,reglee,this) ;
 	}	
 	
@@ -113,11 +115,11 @@ public class Client
 
 	public List<Facture> facturesReglees()
 	{
-		List<Facture> listPayer = new ArrayList<Facture>();
 		for(Facture payer : listFacture) 
 		{
 			if(payer.estReglee()) 
 			{
+				System.out.println(true);
 				listPayer.add(payer);
 			}
 		}

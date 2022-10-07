@@ -7,12 +7,14 @@ public class Facture
 	private int montant;
 	private boolean reglee;
 	private Client client;
+	private LocalDate date;
 	
 	
 	public Facture(int montant,Client client) 
 	{
 		this.client = client;
 		this.montant = montant;
+		this.date = LocalDate.now();
 	}
 
 	public Facture(int montant,boolean reglee,Client client) 
@@ -20,6 +22,13 @@ public class Facture
 		this.montant = montant;
 		this.reglee = reglee;
 		this.client = client;
+		this.date = LocalDate.now();
+	}
+	public Facture(int montant,boolean reglee,Client client,LocalDate date){
+		this.montant = montant;
+		this.reglee = reglee;
+		this.client = client;
+		this.date = date;
 	}
 	
 	/**
@@ -58,8 +67,8 @@ public class Facture
 	
 	public LocalDate getDate()
 	{
-		LocalDate l = LocalDate.now();
-		return l;
+		
+		return this.date;
 	}
 
 	/**
@@ -78,7 +87,7 @@ public class Facture
 	
 	public Facture copie()
 	{
-		return  new Facture(this.montant,this.client);
+		return new Facture(montant,reglee,client,date);
 
 	}
 }

@@ -15,12 +15,14 @@ public class Client {
 	private ArrayList<Facture> listPayer = new ArrayList<Facture>();
 	static ArrayList<Client> clientList = new ArrayList<>();
 
-	public Client(String nom) {
+	public Client(String nom) 
+	{
 		this.nom = nom;
 		keepClient(this);
 	}
 
-	public void keepClient(Client client) {
+	public void keepClient(Client client) 
+	{
 		clientList.add(client);
 	}
 
@@ -30,7 +32,8 @@ public class Client {
 	 * @return le nom du client.
 	 */
 
-	public String getNom() {
+	public String getNom() 
+	{
 		return this.nom;
 	}
 
@@ -40,7 +43,8 @@ public class Client {
 	 * @param nom le nom du client.
 	 */
 
-	public void setNom(String nom) {
+	public void setNom(String nom) 
+	{
 		this.nom = nom;
 	}
 
@@ -51,7 +55,8 @@ public class Client {
 	 * @return la facture créée.
 	 */
 
-	public Facture createFacture(int montant) {
+	public Facture createFacture(int montant) 
+	{
 		if (montant > 0) {
 			Facture f = new Facture(montant, this);
 			add(f);
@@ -62,7 +67,8 @@ public class Client {
 
 	}
 
-	public void add(Facture fact) {
+	public void add(Facture fact) 
+	{
 		this.listFacture.add(fact);
 	}
 
@@ -72,7 +78,8 @@ public class Client {
 	 * @return une copie de la liste des factures du client.
 	 */
 
-	public List<Facture> getFactures() {
+	public List<Facture> getFactures() 
+	{
 		return Collections.unmodifiableList(listFacture);
 	}
 
@@ -82,7 +89,8 @@ public class Client {
 	 * @return la somme des montants des factures.
 	 */
 
-	public int sommeMontants() {
+	public int sommeMontants() 
+	{
 		int sommeglob = 0;
 		for (Facture value : this.getFactures()) {
 			sommeglob += value.getMontant();
@@ -98,7 +106,8 @@ public class Client {
 	 * @return la facture créée.
 	 */
 
-	public Facture createFacture(int montant, boolean reglee) {
+	public Facture createFacture(int montant, boolean reglee) 
+	{
 		Facture fac = new Facture(montant, reglee, this);
 		listFacture.add(fac);
 		return fac;
@@ -110,7 +119,8 @@ public class Client {
 	 * @return la liste des factures reglées.
 	 */
 
-	public List<Facture> facturesReglees() {
+	public List<Facture> facturesReglees() 
+	{
 		for (Facture payer : listFacture) {
 			if (payer.estReglee()) {
 				listPayer.add(payer);
@@ -124,7 +134,8 @@ public class Client {
 	 * 
 	 * @return une copie de la liste de tous les clients.
 	 */
-	public static List<Client> tous() {
+	public static List<Client> tous() 
+	{
 		return Collections.unmodifiableList(clientList);
 	}
 
@@ -132,7 +143,8 @@ public class Client {
 	 * Supprime le client.
 	 */
 
-	public void delete() {
+	public void delete() 
+	{
 		clientList.remove(this);
 	}
 }

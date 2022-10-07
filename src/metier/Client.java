@@ -1,7 +1,6 @@
 package metier;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,11 +12,15 @@ public class Client
 	 */
 	private String nom;
 	private ArrayList<Facture> listFacture = new ArrayList<>();
+	static ArrayList<Client> clientList = new ArrayList<>();
 
 	
 	public Client(String nom)
 	{
 		this.nom = nom;
+	}
+	public  void keepClient(Client client){
+		clientList.add(client);
 	}
 
 
@@ -93,7 +96,6 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-
 		return new Facture(montant,reglee,this) ;
 	}	
 	
@@ -109,7 +111,6 @@ public class Client
 		{
 			if(payer.estReglee()) 
 			{
-				System.out.println(payer.estReglee());
 				listPayer.add(payer);
 			}
 		}
@@ -123,7 +124,7 @@ public class Client
 	 */
 	public static List<Client> tous()
 	{
-		return null;
+		return clientList;
 	}
 	
 	/**
@@ -132,5 +133,6 @@ public class Client
 	
 	public void delete()
 	{
+		clientList.remove(this);
 	}
 }

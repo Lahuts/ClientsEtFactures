@@ -53,9 +53,15 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		Facture f = new Facture(montant,this);
+		if(montant >=  0){
+			Facture f = new Facture(montant,this);
 		add(f);
 		return f;
+		}else{
+		throw new IllegalArgumentException("Le Montant de la facture ne doit pas être negative");
+		}
+		
+		
 	}
 	
 

@@ -13,7 +13,7 @@ public class Client
 	 */
 	static ArrayList<Client> clientList = new ArrayList<>();
 	private String nom;
-	private ArrayList<Facture> listFacture = new ArrayList<>();
+	private ArrayList<Facture> listFacture = new ArrayList<Facture>();
 	private ArrayList<Facture> listPayer = new ArrayList<Facture>();
 
 	public Client(String nom) 

@@ -27,6 +27,10 @@ public class Client
 		clientList.add(client);
 	}
 
+	public void removeFacture(Facture facture) {
+		listFacture.remove(facture);
+	}
+
 	/**
 	 * Retourne le nom du client.
 	 * 

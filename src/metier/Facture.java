@@ -68,7 +68,7 @@ public class Facture
 	
 	public void delete()
 	{
-		this.client.getFactures().remove(this);
+		this.client.removeFacture(this);
 	}
 	
 	/**

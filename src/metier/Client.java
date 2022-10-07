@@ -66,6 +66,20 @@ public class Client {
 		}
 
 	}
+	/**
+	 * Créé une facture en précisant si elle est reglée.
+	 * 
+	 * @param montant Le montant de la facture.
+	 * @param reglée  Vrai si la facture est reglée.
+	 * @return la facture créée.
+	 */
+
+	public Facture createFacture(int montant, boolean reglee) 
+	{
+		Facture fac = new Facture(montant, reglee, this);
+		listFacture.add(fac);
+		return fac;
+	}
 
 	public void add(Facture fact) 
 	{
@@ -92,26 +106,14 @@ public class Client {
 	public int sommeMontants() 
 	{
 		int sommeglob = 0;
-		for (Facture value : this.getFactures()) {
+		for (Facture value : this.getFactures()) 
+		{
 			sommeglob += value.getMontant();
 		}
 		return sommeglob;
 	}
 
-	/**
-	 * Créé une facture en précisant si elle est reglée.
-	 * 
-	 * @param montant Le montant de la facture.
-	 * @param reglée  Vrai si la facture est reglée.
-	 * @return la facture créée.
-	 */
 
-	public Facture createFacture(int montant, boolean reglee) 
-	{
-		Facture fac = new Facture(montant, reglee, this);
-		listFacture.add(fac);
-		return fac;
-	}
 
 	/**
 	 * Retourne la liste des factures reglées.
@@ -121,8 +123,10 @@ public class Client {
 
 	public List<Facture> facturesReglees() 
 	{
-		for (Facture payer : listFacture) {
-			if (payer.estReglee()) {
+		for (Facture payer : listFacture) 
+		{
+			if (payer.estReglee()) 
+			{
 				listPayer.add(payer);
 			}
 		}

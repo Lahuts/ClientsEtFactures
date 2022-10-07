@@ -18,6 +18,7 @@ public class Client
 	public Client(String nom)
 	{
 		this.nom = nom;
+		keepClient(this);
 	}
 	public  void keepClient(Client client){
 		clientList.add(client);

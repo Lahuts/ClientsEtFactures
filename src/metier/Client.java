@@ -125,7 +125,7 @@ public class Client
 	 */
 	public static List<Client> tous()
 	{
-		return clientList;
+		return Collections.unmodifiableList(clientList);
 	}
 	
 	/**

@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Client {
+public class Client 
+{
 	/**
 	 * Crée un client.
 	 * 
 	 * @param nom le nom du client.
 	 */
+	static ArrayList<Client> clientList = new ArrayList<>();
 	private String nom;
 	private ArrayList<Facture> listFacture = new ArrayList<>();
 	private ArrayList<Facture> listPayer = new ArrayList<Facture>();
-	static ArrayList<Client> clientList = new ArrayList<>();
 
 	public Client(String nom) 
 	{
@@ -57,7 +58,8 @@ public class Client {
 
 	public Facture createFacture(int montant) 
 	{
-		if (montant > 0) {
+		if (montant > 0) 
+		{
 			Facture f = new Facture(montant, this);
 			add(f);
 			return f;

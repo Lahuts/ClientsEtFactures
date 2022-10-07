@@ -53,7 +53,7 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		if(montant >=  0){
+		if(montant >  0){
 			Facture f = new Facture(montant,this);
 		add(f);
 		return f;

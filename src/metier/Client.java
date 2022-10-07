@@ -12,8 +12,9 @@ public class Client
 	 */
 	private String nom;
 	private ArrayList<Facture> listFacture = new ArrayList<>();
-	static ArrayList<Client> clientList = new ArrayList<>();
 	private ArrayList<Facture> listPayer = new ArrayList<Facture>();
+	static ArrayList<Client> clientList = new ArrayList<>();
+
 
 	
 	public Client(String nom)
@@ -54,11 +55,14 @@ public class Client
 	
 	public Facture createFacture(int montant)
 	{
-		if(montant >  0){
+		if(montant >  0)
+		{
 			Facture f = new Facture(montant,this);
 		add(f);
 		return f;
-		}else{
+		}
+		else
+		{
 		throw new IllegalArgumentException("Le montant d'une facture ne peut pas être négatif.");
 		}
 		

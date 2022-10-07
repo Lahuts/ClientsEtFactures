@@ -104,8 +104,9 @@ public class Client
 	
 	public Facture createFacture(int montant, boolean reglee)
 	{
-		
-		return new Facture(montant,reglee,this) ;
+		Facture fac = new Facture(montant, reglee,this);
+		listFacture.add(fac);
+		return fac ;
 	}	
 	
 	/**
@@ -119,7 +120,6 @@ public class Client
 		{
 			if(payer.estReglee()) 
 			{
-				System.out.println(true);
 				listPayer.add(payer);
 			}
 		}

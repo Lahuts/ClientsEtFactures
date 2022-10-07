@@ -15,7 +15,8 @@ public class Facture
 		this.montant = montant;
 	}
 
-	public Facture(int montant,boolean reglee,Client client) {
+	public Facture(int montant,boolean reglee,Client client) 
+	{
 		this.montant = montant;
 		this.reglee = reglee;
 		this.client = client;
